@@ -7,9 +7,9 @@ createApplication(
     httpServer,
     {
         cors: {
-            origin: ["*"],
+            origin: process.env.ALLOW_ORIGINS?.split(","),
         },
     }
 );
 
-httpServer.listen(3000);
+httpServer.listen(process.env.PORT);
